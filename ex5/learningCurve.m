@@ -57,8 +57,8 @@ for i = 1:m,
 	X_part = X(1:i, :);
 	y_part = y(1:i);
 	theta = trainLinearReg(X_part, y_part, lambda);
-	error_train(i) = linearRegCostFunction(X_part, y_part, theta, 1);
-	error_val(i) = linearRegCostFunction(Xval, yval, theta, 1);
+	error_train(i) = linearRegCostFunction(X_part, y_part, theta, 0);
+	error_val(i) = linearRegCostFunction(Xval, yval, theta, 0);
 end
 % -------------------------------------------------------------
 
