@@ -29,7 +29,6 @@ grad_unreg = X' * (hypo - y) / m;
 grad = grad_unreg' + theta' * lambda / m;
 grad(1) = grad_unreg(1);
 grad = grad';
-%whos;
 
 % =========================================================================
 
