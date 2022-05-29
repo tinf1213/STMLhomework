@@ -27,11 +27,19 @@ centroids = zeros(K, n);
 %
 
 
-
-
-
-
-
+x_sum = zeros(size(centroids, 1));
+y_sum = zeros(size(centroids, 1));
+counter = zeros(size(centroids, 1));
+for i = 1:size(idx, 1),
+	position = idx(i);
+	counter(position) = counter(position) + 1;
+	x_sum(position) = x_sum(position) + X(i, 1);
+	y_sum(position) = y_sum(position) + X(i, 2);
+end
+for i = 1:size(centroids, 1),
+	centroids(i, 1) = x_sum(i) / counter(i);
+	centroids(i, 2) = y_sum(i) / counter(i);
+end
 
 % =============================================================
 

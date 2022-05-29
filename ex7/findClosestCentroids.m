@@ -21,11 +21,17 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
-
-
-
-
+for i = 1:size(X, 1),
+	temp = zeros(size(centroids, 1), 1);
+	x1 = X(i, 1);
+	y1 = X(i, 2);
+	for j = 1:size(centroids, 1),
+		x2 = centroids(j, 1);
+		y2 = centroids(j, 2);	
+		temp(j) = (x1 - x2) ^ 2 + (y1 - y2) ^ 2;
+		[non, idx(i)] = min(temp);	
+	end
+end
 
 % =============================================================
 
